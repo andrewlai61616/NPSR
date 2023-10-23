@@ -1,4 +1,5 @@
-## Implementation code for "Nominality Score Conditioned Time Series Anomaly Detection by Point/Sequential Reconstruction"
+# NPSR (NeurIPS 2023)
+## Nominality Score Conditioned Time Series Anomaly Detection by Point/Sequential Reconstruction
 
 ------------------------------------------------------------------------
 Installation (to install pytorch cf. https://pytorch.org/get-started/locally/):

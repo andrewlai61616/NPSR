@@ -4,10 +4,12 @@ import pandas as pd
 import pickle as pk
 import matplotlib.pyplot as plt
 
-datapath = 'TSADIS/MSCRED.csv'
+# https://epubs.siam.org/doi/abs/10.1137/1.9781611977653.ch77
+# https://sites.google.com/view/tsadis
+datapath = 'MSCRED.csv'
 
 dat = pd.read_csv(datapath, index_col=0)
-dat_gt = pd.read_csv('TSADIS/MSCRED_GT.csv', index_col=0)
+dat_gt = pd.read_csv('MSCRED_GT.csv', index_col=0)
 
 # dataset split according to https://arxiv.org/abs/1811.08055
 trn_tst_split_point = 10000

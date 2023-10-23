@@ -1,0 +1,154 @@
+### use # to comment
+### code for parsing this file is in [utils/utils.py]
+
+### general
+device                  cuda            # gpu device name
+score_function          Er              # choose from Er, others not implemented
+eval_metric             bestF1          # choose from bestF1, bestF1pa
+
+### default dataset config (can be overwritten if defined in dataset)
+default_dataset_config                  # do not delete
+tst_stride              no_rep          # choose a number or no_rep, which means tst_stride = dl
+clamp_max               4
+clamp_min               -4              # test data is clamped between [clamp_min, clamp_max]
+
+### default model/training config (can be overwritten if defined in the individual settings)
+default_model_trn_config                # do not delete
+model                   NPSR
+z_dim                   4               # 10 latent dim (= D_lat) 
+learn_rate              1e-4            # 1e-4
+batch_size              64
+ff_mult                 4
+enc_depth               4               # 4 (= N_perf)
+pred_depth              4               # 8 (= N_enc)
+epochs                  100
+
+### individual settings for dataset and model/training
+dset_model_trn_config                   # do not delete
+# dataset                 MGAB
+# downsample              2
+# dl                      200
+# stride                  40
+# model                   NPSR
+# pred_dl                 200
+# delta                   20
+# heads                   2
+# theta_N_ratio           0.9985
+
+# dataset                 SWaT
+# downsample              10
+# dl                      100             # window size for M_pt (= W)
+# stride                  10              # stride for M_pt
+# model                   NPSR            # should match one model in [default model config] above
+# pred_dl                 100             # window size for M_seq (= W_0)
+# delta                   20              # M_seq output window size
+# heads                   9
+# theta_N_ratio           0.9985          # cf. sec 3.4
+ 
+# dataset                 WADI
+# downsample              10
+# dl                      100
+# stride                  10
+# model                   NPSR
+# pred_dl                 100
+# delta                   20
+# heads                   14
+# theta_N_ratio           0.9985
+
+# dataset                 PSM
+# downsample              10
+# dl                      100
+# stride                  10
+# model                   NPSR
+# pred_dl                 100
+# delta                   20
+# heads                   5
+# batch_size              32
+# theta_N_ratio           0.9985
+
+# dataset                 MSL
+# downsample              1
+# dl                      100
+# stride                  10
+# entities                all             # can be a list of nums (ent IDs) separated by , w/o spaces
+# train_method            train_together  # combined method for multi-entity datasets
+# model                   NPSR
+# pred_dl                 50
+# delta                   6
+# heads                   12
+# theta_N_ratio           0.975
+
+# dataset                 SMAP
+# downsample              1
+# dl                      50
+# stride                  10
+# entities                all
+# train_method            train_together
+# model                   NPSR
+# pred_dl                 50
+# delta                   6
+# heads                   10
+# theta_N_ratio           0.9985
+# 
+# dataset                 SMD
+# downsample              2
+# dl                      50
+# stride                  10
+# entities                all
+# train_method            train_together
+# model                   NPSR
+# pred_dl                 50
+# delta                   6
+# heads                   11
+# theta_N_ratio           0.9985
+# 
+# dataset                 MSL
+# downsample              1
+# dl                      100
+# stride                  10
+# entities                all
+# train_method            train_per_entity    # standard method for multi-entity datasets
+# model                   NPSR
+# pred_dl                 50
+# delta                   6
+# heads                   11
+# theta_N_ratio           0.9985
+# 
+# dataset                 SMAP
+# downsample              1
+# dl                      50
+# stride                  10
+# entities                all
+# train_method            train_per_entity
+# model                   NPSR
+# pred_dl                 50
+# delta                   6
+# heads                   5
+# theta_N_ratio           0.9985
+# 
+# dataset                 SMD
+# downsample              2
+# dl                      50
+# stride                  10
+# entities                all
+# train_method            train_per_entity
+# model                   NPSR
+# pred_dl                 50
+# delta                   6
+# heads                   8
+# theta_N_ratio           0.9985
+
+dataset                 MSCRED
+downsample              1
+dl                      50
+stride                  10
+entities                all
+train_method            train_together
+model                   NPSR
+pred_dl                 50
+delta                   6
+heads                   5
+theta_N_ratio           0.9985
+
+
+

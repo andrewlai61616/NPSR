@@ -1,4 +1,4 @@
-# NPSR (NeurIPS 2023)
+# NPSR (NeurIPS 2023) (--- Under construction ---)
 ## Nominality Score Conditioned Time Series Anomaly Detection by Point/Sequential Reconstruction
 
 ------------------------------------------------------------------------

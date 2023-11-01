@@ -11,17 +11,32 @@ $$
 
 Under this formulation, we link the reconstruction errors with the deviations (anomalies) and introduce a nominality score $N(\cdot)$. We derive an induced anomaly score $\hat{A}(\cdot)$ by further integrating $N(\cdot)$ and the original anomaly score $A(\cdot)$. $\hat{A}(\cdot)$ is **theoretically proven** to be superior over $A(\cdot)$ under certain conditions.
 
-(Scheme)
+<p align="center">
+  <img src="imgs/models_and_scheme.png" width="900px"/>
+</p>
+<p align="center">
+  Figure 1. (a) Performer-based autoencoder $M_{pt}$, (b) Performer-based stacked encoder $M_{seq}$, and (c) main scheme for NPSR.
+</p>
 
-**Note**: 
+## Main Results
+We evaluate the performance of NPSR against 14 baselines over 7 datasets using the best F1 score ($\mathrm{F}1^\*$).
 
-(Results)
+**Note**: Due to reliability concerns, we didn't use the point-adjusted best F1 score ($\mathrm{F}1^\*_{\mathrm{PA}}$) as the main metric. (See Appendix D)
+
+<p align="left">
+  Table 1. Best F1 score ($\mathrm{F1^*}$) results on several datasets, with bold text denoting the highest and underlined text denoting the second highest value. The deep learning methods are sorted with older methods at the top and newer ones at the bottom.
+</p>
+<p align="center">
+  <img src="imgs/main_table.png" width="600px"/>
+</p>
 
 ## Setup
 
 ### Prerequisites
 
 ### Getting Started
+
+## Datasets
 
 
 
@@ -51,7 +66,7 @@ This code will be put on github afterwards.
 customized datasets how to implement
 
 
-# Steps for intial clean-up step for the raw data using 'make.py'
+# Steps for initial clean-up step for the raw data using 'make.py'
 After putting the files/dir in the correct folder (folder name has to match dataset name), execute: "python make_pk.py".
 A .pk file with the same file name as the dataset will appear in the same folder.
 The .pk file can be loaded by the main program and further preprocessed.

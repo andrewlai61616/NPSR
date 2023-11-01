@@ -1,6 +1,30 @@
 # NPSR (NeurIPS 2023) (--- Under construction ---)
 ## Nominality Score Conditioned Time Series Anomaly Detection by Point/Sequential Reconstruction
 
+Official PyTorch implementation for **N**ominality Score Conditioned Time Series Anomaly Detection by **P**oint/**S**equential **R**econstruction (NPSR).
+
+A major difficulty for time series anomaly detection arises from modeling time-dependent relationships to find **contextual anomalies** while maintaining detection accuracy for **point anomalies**. In this paper, we propose NPSR, an algorithm that utilizes point-based and sequence-based reconstruction models. The point-based model quantifies point anomalies, and the sequence-based model quantifies both point and contextual anomalies. We formulate the observed time point $\textbf{x}^0_t$ is a two-stage deviated value from a nominal time point $\textbf{x}^*_t$.
+
+$$
+  \textbf{x}^0_t = \textbf{x}^*_t + \Delta\textbf{x}^c_t + \Delta\textbf{x}^p_t
+$$
+
+Under this formulation, we link the reconstruction errors with the deviations (anomalies) and introduce a nominality score $N(\cdot)$. We derive an induced anomaly score $\hat{A}(\cdot)$ by further integrating $N(\cdot)$ and the original anomaly score $A(\cdot)$. $\hat{A}(\cdot)$ is **theoretically proven** to be superior over $A(\cdot)$ under certain conditions.
+
+(Scheme)
+
+**Note**: 
+
+(Results)
+
+## Setup
+
+### Prerequisites
+
+### Getting Started
+
+
+
 ------------------------------------------------------------------------
 Installation (to install pytorch cf. https://pytorch.org/get-started/locally/):
 conda create -n npsr python=3.11

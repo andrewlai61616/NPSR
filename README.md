@@ -111,7 +111,7 @@ Required raw file/dir: 'train' (dir), 'test' (dir), 'test_label' (dir), all cont
 
 ### trimSyn dataset
 (tbd...)
-
+we treat this trimmed dataset as a 4-entity dataset, train together
 customized datasets how to implement
 
 

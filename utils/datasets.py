@@ -8,6 +8,7 @@ SMAP
 MSL
 SMD
 PSM
+trimSyn
 
 """
 

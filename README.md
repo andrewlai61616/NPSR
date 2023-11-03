@@ -36,18 +36,18 @@ We evaluate the performance of NPSR against 14 baselines over 7 datasets using t
 
 ### Getting Started
 Installation (to install pytorch cf. https://pytorch.org/get-started/locally/):
-```
+```shell
 conda create -n npsr python=3.11
 conda activate npsr
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install torch torchvision torchaudio
 pip install -r requirements.txt
 ```
 
 ## Train and Test
-'config.txt' contains all the settings
+```config.txt``` contains all the settings
 
 [Training]
-```
+```shell
 usage: python main.py config.txt
 ```
 
@@ -91,7 +91,7 @@ Files ```train.csv```, ```test.csv```, and ```test_label.csv``` should be in the
 
 ### MSL and SMAP dataset
 You can get the MSL and SMAP datasets using:
-```
+```shell
 wget https://s3-us-west-2.amazonaws.com/telemanom/data.zip
 unzip data.zip
 rm data.zip
@@ -116,16 +116,31 @@ This is the univariate Mackey-Glass Anomaly Benchmark dataset from https://githu
 
 Please clone the github repository into the same directory as ```make_pk.py```.
 
-### Customized datasets
+### Custom datasets
+1. Edit ```utils/datasets.py``` and insert some code in the function ```get_dataset_processed``` like this:
+```Python
+elif params.name == 'DATASET':
+    data_path = 'datasets/DATASET/'
+    if data_path not in sys.path:
+        sys.path.append(data_path)
+    from preprocess_DATASET import DATASET_Dataset
+    dataset = DATASET_Dataset(dataset_pth = data_path + params.name + '.pk')                             # single entity dataset
+    dataset = DATASET_Dataset(dataset_pth = data_path + params.name + '.pk', entities = params.entities) # multi entity dataset
+```
+The program will try to import ```DATASET_Dataset``` from ```datasets/DATASET/preprocess_DATASET.py```.
 
+2. Construct the file ```datasets/DATASET/preprocess_DATASET.py``` and define certain properties (e.g. dims, num_entity, other dataset specific preprocessing). A single entity example (SWaT) can be found at ```datasets/SWaT/preprocess_SWaT.py```; and a multi entity example (MSL) can be found at ```datasets/MSL/preprocess_MSL.py```.
 
+3. Construct ```DATASET.pk```.
+As we can see in the above code block, the program looks for the .pk file ```datasets/DATASET/DATASET.pk```.
 
+Each ```make_pk.py``` script that we have provided outputs a .pk file that contains a Python Dictionary, say we name it ```dat```. ```dat``` contains three key/value pairs: ```dat['x_trn'], dat['x_tst'], dat['lab_tst']```. For single entity datasets, ```dat['x_trn']``` and ```dat['x_tst']``` are 2D numpy arrays having the shape *(time points, dims)*. ```dat['lab_tst']``` is a 1D numpy array having the shape *(time points,)*. For multi entity datasets, all of them are lists that contain multiple numpy arrays. For each entity, the structure is the same as a single entity dataset.
 
-
+You do not need a ```make_pk.py```, but should have a corresponding ```DATASET.pk``` that can be loaded by ```preprocess_DATASET.py```.
 
 ## Citation
 If you find this repo useful, please cite our paper. This citation might be updated after NeurIPS 2023 conference.
-```
+```BibTeX
 @article{lai2023nominality,
   title={Nominality Score Conditioned Time Series Anomaly Detection by Point/Sequential Reconstruction},
   author={Lai, Chih-Yu and Sun, Fan-Keng and Gao, Zhengqi and Lang, Jeffrey H and Boning, Duane S},

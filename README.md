@@ -1,4 +1,4 @@
-# NPSR (NeurIPS 2023) (--- Under construction ---)
+# NPSR (NeurIPS 2023)
 ## Nominality Score Conditioned Time Series Anomaly Detection by Point/Sequential Reconstruction
 
 Official PyTorch implementation for **N**ominality Score Conditioned Time Series Anomaly Detection by **P**oint/**S**equential **R**econstruction (NPSR).

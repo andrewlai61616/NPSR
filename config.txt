@@ -15,13 +15,13 @@ clamp_min               -4              # test data is clamped between [clamp_mi
 ### default model/training config (can be overwritten if defined in the individual settings)
 default_model_trn_config                # do not delete
 model                   NPSR            # currently only NPSR is implemented
-z_dim                   10              # latent dim (= D_lat) 
+z_dim                   4               # latent dim (= D_lat) 
 learn_rate              1e-4
 batch_size              64
 ff_mult                 4
 enc_depth               4               # (= N_perf)
-pred_depth              8               # (= N_enc)
-epochs                  100
+pred_depth              4               # (= N_enc)
+epochs                  25
 
 ### individual settings for dataset and model/training
 dset_model_trn_config                   # do not delete
@@ -138,17 +138,17 @@ dset_model_trn_config                   # do not delete
 # heads                   8
 # theta_N_ratio           0.9985
 
-# dataset                 trimSyn
-# downsample              1
-# dl                      50
-# stride                  10
-# entities                all
-# train_method            train_together
-# model                   NPSR
-# pred_dl                 50
-# delta                   6
-# heads                   5
-# theta_N_ratio           0.9985
+dataset                 trimSyn
+downsample              1
+dl                      50
+stride                  10
+entities                all
+train_method            train_together
+model                   NPSR
+pred_dl                 50
+delta                   6
+heads                   5
+theta_N_ratio           0.9985
 
 
 

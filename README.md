@@ -41,16 +41,21 @@ pip install torch torchvision torchaudio
 pip install -r requirements.txt
 ```
 
-## Train and Test
-```config.txt``` contains all the settings
+## Training and Testing
+```config.txt``` contains all the settings. See Appendix C in the paper for the parameter settings.
 
-[Training]
+usage:
 ```shell
-usage: python main.py config.txt
+python main.py config.txt
 ```
-
-[Testing]
 The algorithm will do an evaluation every epoch
+
+<p align="center">
+  <img src="imgs/evaluation_screenshot.png" width="900px"/>
+</p>
+<p align="center">
+  Figure 1. A screenshot of an evaluation step for the test data of trimSyn.
+</p>
 
 ## Visualization
 After training/testing, it is possible to use ```parse_results.ipynb``` to visualize the training/testing results.

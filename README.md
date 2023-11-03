@@ -32,8 +32,6 @@ We evaluate the performance of NPSR against 14 baselines over 7 datasets using t
 
 ## Setup
 
-### Prerequisites
-
 ### Getting Started
 Installation (to install pytorch cf. https://pytorch.org/get-started/locally/):
 ```shell
@@ -158,4 +156,3 @@ Andrew Lai (Chih-Yu Lai), Ph. D. Student, https://chihyulai.com/
 
 Department of Electrical Engineering and Computer Science, Massachusetts Institute of Technology
 
-## References

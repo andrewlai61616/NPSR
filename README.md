@@ -53,7 +53,7 @@ usage: python main.py config.txt
 The algorithm will do an evaluation every epoch
 
 ## Visualization
-After training, it is possible to use 'parse_results.ipynb' to visualize the training results.
+After training/testing, it is possible to use ```parse_results.ipynb``` to visualize the training/testing results.
 
 ## Datasets
 ### Preparation

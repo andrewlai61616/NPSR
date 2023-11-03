@@ -58,13 +58,14 @@ The algorithm will do an evaluation every epoch
 After training, it is possible to use 'parse_results.ipynb' to visualize the training results.
 
 ## Datasets
-Raw dataset files should be put under ./datasets/[DATASET NAME]
+### Preparation
+Dataset folders should be put under ```./datasets/[DATASET]```
 
-### Steps for initial clean-up step for the raw data using 'make_pk.py'
-After putting the files/dir in the correct folder (folder name has to match dataset name), execute: "python make_pk.py".
-A .pk file with the same file name as the dataset will appear in the same folder.
-The .pk file can be loaded by the main program and further preprocessed.
+After downloading and putting the files/dir in the correct folder (folder name should match dataset name), execute: ```python make_pk.py```.
 
+A file named ```[DATASET].pk``` will appear in the same folder.
+
+The main program will import ```preprocess_[DATASET].py``` and load ```[DATASET].pk``` for preprocessing.
 
 ### SWaT dataset
 You can get the SWaT and WADI dataset by filling out the form at:
@@ -88,26 +89,20 @@ https://github.com/eBay/RANSynCoders/tree/main/data
 
 Files ```train.csv```, ```test.csv```, and ```test_label.csv``` should be in the same directory as  ```make_pk.py```.
 
-### MSL dataset
-You can get the public datasets (SMAP and MSL) using:
-wget https://s3-us-west-2.amazonaws.com/telemanom/data.zip && unzip data.zip && rm data.zip
-cd data && wget https://raw.githubusercontent.com/khundman/telemanom/master/labeled_anomalies.csv
+### MSL and SMAP dataset
+You can get the MSL and SMAP datasets using:
+```
+wget https://s3-us-west-2.amazonaws.com/telemanom/data.zip
+unzip data.zip
+rm data.zip
+cd data
+wget https://raw.githubusercontent.com/khundman/telemanom/master/labeled_anomalies.csv
+```
 
 Folders ```train```, ```test```, both containing the .npy files for each entity, and file ```labeled_anomalies.csv``` should be in the same directory as ```make_pk.py```.
-
-(No need to delete the SMAP data)
-
-### SMAP dataset
-You can get the public datasets (SMAP and MSL) using:
-wget https://s3-us-west-2.amazonaws.com/telemanom/data.zip && unzip data.zip && rm data.zip
-cd data && wget https://raw.githubusercontent.com/khundman/telemanom/master/labeled_anomalies.csv
-
-Folders ```train```, ```test```, both containing the .npy files for each entity, and file ```labeled_anomalies.csv``` should be in the same directory as ```make_pk.py```.
-
-(No need to delete the MSL data)
 
 ### SMD dataset
-Dataset downloadable at:
+Dataset downloadable at: 
 https://github.com/NetManAIOps/OmniAnomaly/tree/master/ServerMachineDataset
 
 Folders ```train```, ```test```, and ```test_label```, all containing .txt files for each entity, should be in the same directory as ```make_pk.py```.
@@ -122,7 +117,11 @@ This is the univariate Mackey-Glass Anomaly Benchmark dataset from https://githu
 Please clone the github repository into the same directory as ```make_pk.py```.
 
 ### Customized datasets
-placeholder
+
+
+
+
+
 
 ## Citation
 If you find this repo useful, please cite our paper. This citation might be updated after NeurIPS 2023 conference.

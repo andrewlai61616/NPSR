@@ -34,6 +34,6 @@ print('anomaly rate =', anomaly_rate)
 x_trn = [x_trn] * len(tst_sections)
 
 # save dataset to pickle file
-MSCRED_path = 'MSCRED.pk'
-with open(MSCRED_path, 'wb') as pkf:
+trimSyn_path = 'trimSyn.pk'
+with open(trimSyn_path, 'wb') as pkf:
     pk.dump({'x_trn': x_trn, 'x_tst': x_tst, 'lab_tst': lab_tst}, pkf)

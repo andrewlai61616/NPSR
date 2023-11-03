@@ -63,12 +63,12 @@ def get_dataset_processed(params):
         from preprocess_PSM import PSM_Dataset
         dataset = PSM_Dataset(dataset_pth = data_path + params.name + '.pk')
 
-    elif params.name == 'MSCRED':
-        data_path = 'datasets/MSCRED/'
+    elif params.name == 'trimSyn':
+        data_path = 'datasets/trimSyn/'
         if data_path not in sys.path:
             sys.path.append(data_path)
-        from preprocess_MSCRED import MSCRED_Dataset
-        dataset = MSCRED_Dataset(dataset_pth = data_path + params.name + '.pk', entities = params.entities)
+        from preprocess_trimSyn import trimSyn_Dataset
+        dataset = trimSyn_Dataset(dataset_pth = data_path + params.name + '.pk', entities = params.entities)
         
     else:
         print('Cannot find dataset name!')

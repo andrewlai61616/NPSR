@@ -2,7 +2,7 @@
 ### code for parsing this file is in [utils/utils.py]
 
 ### general
-device                  cuda            # gpu device name
+device                  cuda:0          # gpu device name
 score_function          Er              # choose from Er, others not implemented
 eval_metric             bestF1          # choose from bestF1, bestF1pa
 
@@ -14,26 +14,26 @@ clamp_min               -4              # test data is clamped between [clamp_mi
 
 ### default model/training config (can be overwritten if defined in the individual settings)
 default_model_trn_config                # do not delete
-model                   NPSR
-z_dim                   4               # 10 latent dim (= D_lat) 
-learn_rate              1e-4            # 1e-4
+model                   NPSR            # currently only NPSR is implemented
+z_dim                   10              # latent dim (= D_lat) 
+learn_rate              1e-4
 batch_size              64
 ff_mult                 4
-enc_depth               4               # 4 (= N_perf)
-pred_depth              4               # 8 (= N_enc)
+enc_depth               4               # (= N_perf)
+pred_depth              8               # (= N_enc)
 epochs                  100
 
 ### individual settings for dataset and model/training
 dset_model_trn_config                   # do not delete
-# dataset                 MGAB
-# downsample              2
-# dl                      200
-# stride                  40
-# model                   NPSR
-# pred_dl                 200
-# delta                   20
-# heads                   2
-# theta_N_ratio           0.9985
+dataset                 MGAB
+downsample              2
+dl                      200
+stride                  40
+model                   NPSR
+pred_dl                 200
+delta                   20
+heads                   2
+theta_N_ratio           0.9985
 
 # dataset                 SWaT
 # downsample              10
@@ -89,7 +89,7 @@ dset_model_trn_config                   # do not delete
 # delta                   6
 # heads                   10
 # theta_N_ratio           0.9985
-# 
+
 # dataset                 SMD
 # downsample              2
 # dl                      50
@@ -101,7 +101,7 @@ dset_model_trn_config                   # do not delete
 # delta                   6
 # heads                   11
 # theta_N_ratio           0.9985
-# 
+ 
 # dataset                 MSL
 # downsample              1
 # dl                      100
@@ -113,7 +113,7 @@ dset_model_trn_config                   # do not delete
 # delta                   6
 # heads                   11
 # theta_N_ratio           0.9985
-# 
+ 
 # dataset                 SMAP
 # downsample              1
 # dl                      50
@@ -125,7 +125,7 @@ dset_model_trn_config                   # do not delete
 # delta                   6
 # heads                   5
 # theta_N_ratio           0.9985
-# 
+ 
 # dataset                 SMD
 # downsample              2
 # dl                      50
@@ -138,17 +138,17 @@ dset_model_trn_config                   # do not delete
 # heads                   8
 # theta_N_ratio           0.9985
 
-dataset                 MSCRED
-downsample              1
-dl                      50
-stride                  10
-entities                all
-train_method            train_together
-model                   NPSR
-pred_dl                 50
-delta                   6
-heads                   5
-theta_N_ratio           0.9985
+# dataset                 trimSyn
+# downsample              1
+# dl                      50
+# stride                  10
+# entities                all
+# train_method            train_together
+# model                   NPSR
+# pred_dl                 50
+# delta                   6
+# heads                   5
+# theta_N_ratio           0.9985
 
 
 

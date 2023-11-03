@@ -6,8 +6,8 @@ import pickle as pk
 # this should be available
 import utils.preprocess as prep
 
-# MSCRED dataset
-class MSCRED_Dataset():
+# trimSyn dataset
+class trimSyn_Dataset():
     def __init__(self, dataset_pth, entities):
         self.dims = 30
         with open(dataset_pth, 'rb') as file:
@@ -48,26 +48,6 @@ class MSCRED_Dataset():
                 x_trn_all.append(dat['x_trn'])
                 x_tst_all.append(dat['x_tst'])
                 lab_tst_all.append(dat['lab_tst'])
-            
-#             print('Generating dataset here!!!!')
-#             print('len trn=', len(x_trn_all), 'len tst=', len(x_tst_all), 'len lab=', len(lab_tst_all))
-#             for x in x_trn_all:
-#                 print(x.shape)
-#             for x in x_tst_all:
-#                 print(x.shape)
-#             for x in lab_tst_all:
-#                 print(x.shape)
-#             # concatenate all
-#             x_trn_all = np.concatenate(x_trn_all, axis=0)
-#             x_tst_all = np.concatenate(x_tst_all, axis=0)
-#             lab_tst_all = np.concatenate(lab_tst_all, axis=0)
-#             print(x_trn_all.shape, x_tst_all.shape, lab_tst_all.shape)
-#             print('anomaly rate =', lab_tst_all.sum()/len(lab_tst_all))
-#             save_dataset_path = 'datasets/MSCRED/MSCRED_ready.pk'
-#             with open(save_dataset_path, 'wb') as pkf:
-#                 pk.dump({'x_trn': x_trn_all, 'x_tst': x_tst_all, 'lab_tst': lab_tst_all}, pkf)
-#             print('saved to MSCRED dataset')
-#             exit()
             
             return prep.window_stride(x_trn_all, x_tst_all, lab_tst_all, self.num_entity, dl, stride, tst_stride)
 

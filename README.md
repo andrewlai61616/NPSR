@@ -59,13 +59,13 @@ After training, it is possible to use 'parse_results.ipynb' to visualize the tra
 
 ## Datasets
 ### Preparation
-Dataset folders should be put under ```./datasets/[DATASET]```
+Dataset folders should be put under ```./datasets/DATASET```
 
 After downloading and putting the files/dir in the correct folder (folder name should match dataset name), execute: ```python make_pk.py```.
 
-A file named ```[DATASET].pk``` will appear in the same folder.
+A file named ```DATASET.pk``` will appear in the same folder.
 
-The main program will import ```preprocess_[DATASET].py``` and load ```[DATASET].pk``` for preprocessing.
+The main program will import ```preprocess_DATASET.py``` and load ```DATASET.pk``` for preprocessing.
 
 ### SWaT dataset
 You can get the SWaT and WADI dataset by filling out the form at:

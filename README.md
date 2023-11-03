@@ -108,8 +108,10 @@ https://github.com/NetManAIOps/OmniAnomaly/tree/master/ServerMachineDataset
 Folders ```train```, ```test```, and ```test_label```, all containing .txt files for each entity, should be in the same directory as ```make_pk.py```.
 
 ### trimSyn dataset
-(tbd...)
-we treat this trimmed dataset as a 4-entity dataset, train together
+Dataset downloadable at: 
+https://drive.google.com/drive/folders/1y5nIA5ame0RvNAuRmnA5ScW8PL1LP-Oq
+
+Files ```MSCRED.csv``` and ```MSCRED_GT.csv``` should be in the same directory as  ```make_pk.py```.
 
 ### MGAB dataset
 This is the univariate Mackey-Glass Anomaly Benchmark dataset from https://github.com/MarkusThill/MGAB
@@ -155,3 +157,5 @@ Email: chihyul@mit.edu
 Andrew Lai (Chih-Yu Lai), Ph. D. Student, https://chihyulai.com/
 
 Department of Electrical Engineering and Computer Science, Massachusetts Institute of Technology
+
+## References

@@ -58,10 +58,9 @@ The algorithm will do an evaluation every epoch
 After training, it is possible to use 'parse_results.ipynb' to visualize the training results.
 
 ## Datasets
+Raw dataset files should be put under ./datasets/[DATASET NAME]
 
-raw dataset files should be put under ./datasets/[NAME]
-
-### Steps for initial clean-up step for the raw data using 'make.py'
+### Steps for initial clean-up step for the raw data using 'make_pk.py'
 After putting the files/dir in the correct folder (folder name has to match dataset name), execute: "python make_pk.py".
 A .pk file with the same file name as the dataset will appear in the same folder.
 The .pk file can be loaded by the main program and further preprocessed.
@@ -71,49 +70,59 @@ The .pk file can be loaded by the main program and further preprocessed.
 You can get the SWaT and WADI dataset by filling out the form at:
 https://docs.google.com/forms/d/1GOLYXa7TX0KlayqugUOOPMvbcwSQiGNMOjHuNqKcieA/viewform?edit_requested=true
 
-This work uses the data from 'SWaT.A1 & A2_Dec 2015'.
-Required raw files: 'SWaT_Dataset_Attack_v0.csv', 'SWaT_Dataset_Normal_v1.csv' (please convert them from .xlsx files first)
+This work uses the data from ```SWaT.A1 & A2_Dec 2015```.
+
+Files ```SWaT_Dataset_Attack_v0.csv``` and ```SWaT_Dataset_Normal_v1.csv``` should be in the same directory as  ```make_pk.py```. (please convert them from .xlsx files first)
 
 ### WADI dataset
 You can get the SWaT and WADI dataset by filling out the form at:
 https://docs.google.com/forms/d/1GOLYXa7TX0KlayqugUOOPMvbcwSQiGNMOjHuNqKcieA/viewform?edit_requested=true
 
 This work uses the 2017 year data.
-Required raw files: 'WADI_14days.csv', 'WADI_attackdata.csv'
+
+Files ```WADI_14days.csv``` and ```WADI_attackdata.csv``` should be in the same directory as  ```make_pk.py```.
 
 ### PSM dataset
 Dataset downloadable at:
 https://github.com/eBay/RANSynCoders/tree/main/data
 
-Required raw files: 'train.csv', 'test.csv', 'test_label.csv'
+Files ```train.csv```, ```test.csv```, and ```test_label.csv``` should be in the same directory as  ```make_pk.py```.
 
 ### MSL dataset
 You can get the public datasets (SMAP and MSL) using:
 wget https://s3-us-west-2.amazonaws.com/telemanom/data.zip && unzip data.zip && rm data.zip
 cd data && wget https://raw.githubusercontent.com/khundman/telemanom/master/labeled_anomalies.csv
 
-Required raw files/dir: 'train' (dir), 'test' (dir), both containing the .npy files for each entity, and 'labeled_anomalies.csv'
-No need to delete the SMAP data
+Folders ```train```, ```test```, both containing the .npy files for each entity, and file ```labeled_anomalies.csv``` should be in the same directory as ```make_pk.py```.
+
+(No need to delete the SMAP data)
 
 ### SMAP dataset
 You can get the public datasets (SMAP and MSL) using:
 wget https://s3-us-west-2.amazonaws.com/telemanom/data.zip && unzip data.zip && rm data.zip
 cd data && wget https://raw.githubusercontent.com/khundman/telemanom/master/labeled_anomalies.csv
 
-Required raw files/dir: 'train' (dir), 'test' (dir), both containing the .npy files for each entity, and 'labeled_anomalies.csv'
-No need to delete the MSL data
+Folders ```train```, ```test```, both containing the .npy files for each entity, and file ```labeled_anomalies.csv``` should be in the same directory as ```make_pk.py```.
+
+(No need to delete the MSL data)
 
 ### SMD dataset
 Dataset downloadable at:
 https://github.com/NetManAIOps/OmniAnomaly/tree/master/ServerMachineDataset
 
-Required raw file/dir: 'train' (dir), 'test' (dir), 'test_label' (dir), all containing .txt files for each entity.
+Folders ```train```, ```test```, and ```test_label```, all containing .txt files for each entity, should be in the same directory as ```make_pk.py```.
 
 ### trimSyn dataset
 (tbd...)
 we treat this trimmed dataset as a 4-entity dataset, train together
-customized datasets how to implement
 
+### MGAB dataset
+This is the univariate Mackey-Glass Anomaly Benchmark dataset from https://github.com/MarkusThill/MGAB
+
+Please clone the github repository into the same directory as ```make_pk.py```.
+
+### Customized datasets
+placeholder
 
 ## Citation
 If you find this repo useful, please cite our paper. This citation might be updated after NeurIPS 2023 conference.

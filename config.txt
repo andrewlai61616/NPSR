@@ -25,15 +25,15 @@ epochs                  100
 
 ### individual settings for dataset and model/training
 dset_model_trn_config                   # do not delete
-dataset                 MGAB
-downsample              2
-dl                      200
-stride                  40
-model                   NPSR
-pred_dl                 200
-delta                   20
-heads                   2
-theta_N_ratio           0.9985
+# dataset                 MGAB
+# downsample              2
+# dl                      200
+# stride                  40
+# model                   NPSR
+# pred_dl                 200
+# delta                   20
+# heads                   2
+# theta_N_ratio           0.9985
 
 # dataset                 SWaT
 # downsample              10
